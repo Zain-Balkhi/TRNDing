@@ -8,6 +8,7 @@
     --background-color: #fcfafa;
     --secondary-background: #d3d3d3;
     --highlight: #445E93;
+    --green: #79b791;
 
   }
 body {
@@ -70,6 +71,13 @@ body {
 .grid div {
     border-radius: 40px;
     background-color: var(--secondary-background); /* light grey background for squares */
+    padding: 20px;
+    text-align: center;
+    aspect-ratio: 1 / 1; /* makes the grid items squares */
+}
+.grid div:hover {
+    border-radius: 40px;
+    background-color: var(--green); /* light grey background for squares */
     padding: 20px;
     text-align: center;
     aspect-ratio: 1 / 1; /* makes the grid items squares */
