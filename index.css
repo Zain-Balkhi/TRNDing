@@ -5,10 +5,10 @@
 /* font - #000009 - black  */
 /* font 2 - #0d0a0b - gray  */
 :root {
-    --background-color: #fcfafa;
-    --secondary-background: #d3d3d3;
+    --background-color: #f2eaea;
+    --secondary-background: #abd2ba;
     --highlight: #445E93;
-    --green: #79b791;
+    --green: #d6d0d2;
 
   }
 body {
@@ -17,7 +17,7 @@ body {
     font-family: Arial, sans-serif;
 }
 .header {
-    background-color: var(--background-color); /* header background matches body */
+    background-color:#f2eaea; /* header background matches body */
     color: black; /* changed text color for visibility */
     padding: 35px 20px;
     display: flex;
@@ -77,7 +77,7 @@ body {
 
 /* Style the grid items */
 .grid-item {
-    border-radius: 5vw; /* Adjust border-radius as a percentage of viewport width */
+    border-radius: 3vw; /* Adjust border-radius as a percentage of viewport width */
     background-color: var(--secondary-background); /* light grey background for squares */
     padding: 20px; /* Fixed padding */
     text-align: center;
