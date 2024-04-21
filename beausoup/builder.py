@@ -1,4 +1,9 @@
+from scraper import *
 
+# get array with top tens
+trend = top_ten_list()
+
+html_content = f"""
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,37 +32,37 @@
       <div class="grid-container">
         <div class="grid">
           <div class="grid-item">
-              <h2 class="h2">Lakers</h2>
+              <h2 class="h2">{trend[0]}</h2>
               <p class="description">desc 1 i think this is th ebest thing for us if there is a really long description i think there is nothing that we should do about it and let it be lets be honest here im the goat</p>
           </div>
           <div class="grid-item">
-            <h2 class="h2">Knicks</h2>
+            <h2 class="h2">{trend[1]}</h2>
             <p class="description">desc 1 i think this is th ebest thing for us if there is a really long description i think there is nothing that we should do about it and let it be lets be honest here im the goat</p>
           </div>
           <div class="grid-item">
-            <h2 class="h2">Timberwolves</h2>
+            <h2 class="h2">{trend[2]}</h2>
             <p class="description">desc 1 i think this is th ebest thing for us if there is a really long description i think there is nothing that we should do about it and let it be lets be honest here im the goat</p>
           </div>
           <div class="grid-item">
-            <h2 class="h2">Cavs</h2>
+            <h2 class="h2">{trend[3]}</h2>
             <p class="description">desc 1 i think this is th ebest thing for us if there is a really long description i think there is nothing that we should do about it and let it be lets be honest here im the goat</p>
           </div><div class="grid-item">
-            <h2 class="h2">Arsenal</h2>
+            <h2 class="h2">{trend[4]}</h2>
             <p class="description">desc 1 i think this is th ebest thing for us if there is a really long description i think there is nothing that we should do about it and let it be lets be honest here im the goat</p>
           </div><div class="grid-item">
-            <h2 class="h2">Bruins</h2>
+            <h2 class="h2">{trend[5]}</h2>
             <p class="description">desc 1 i think this is th ebest thing for us if there is a really long description i think there is nothing that we should do about it and let it be lets be honest here im the goat</p>
           </div><div class="grid-item">
-            <h2 class="h2">Nashville SC, Inter Miami</h2>
+            <h2 class="h2">{trend[6]}</h2>
             <p class="description">desc 1 i think this is th ebest thing for us if there is a really long description i think there is nothing that we should do about it and let it be lets be honest here im the goat</p>
           </div><div class="grid-item">
-            <h2 class="h2">Chicago Bulls</h2>
+            <h2 class="h2">{trend[7]}</h2>
             <p class="description">desc 1 i think this is th ebest thing for us if there is a really long description i think there is nothing that we should do about it and let it be lets be honest here im the goat</p>
           </div><div class="grid-item">
-            <h2 class="h2">TikTok ban</h2>
+            <h2 class="h2">{trend[8]}</h2>
             <p class="description">desc 1 i think this is th ebest thing for us if there is a really long description i think there is nothing that we should do about it and let it be lets be honest here im the goat</p>
           </div><div class="grid-item">
-            <h2 class="h2">Record Store Day 2024</h2>
+            <h2 class="h2">{trend[9]}</h2>
             <p class="description">desc 1 i think this is th ebest thing for us if there is a really long description i think there is nothing that we should do about it and let it be lets be honest here im the goat</p>
           </div>
       </div>
@@ -69,7 +74,7 @@
         <span class="close">&times;</span>
         <h2 id="modal-title1" class="modal-title">Modal Title 1</h2>
         <div class="modal-body">
-          <p>LeBron James of the Los Angeles Lakers broke the NBA's all-time career scoring record on February 8, 2023. The achievement has garnered widespread attention and sparked discussions about James' legacy as one of the greatest basketball players of all time.</p>
+          <p>{generate_paragraph(trend[0])}</p>
         </div>
       </div>
     </div>
@@ -80,7 +85,7 @@
         <span class="close">&times;</span>
         <h2 id="modal-title2">Modal Title 2</h2>
         <div class="modal-body">
-          <p>The New York Knicks are trending because they recently traded for All-Star guard Donovan Mitchell. Mitchell is one of the most exciting young players in the NBA and his addition to the Knicks roster has fans excited about the team's future.</p>
+          <p>{generate_paragraph(trend[1])}</p>
         </div>
       </div>
     </div>
@@ -90,7 +95,7 @@
         <span class="close">&times;</span>
         <h2 id="modal-title3">Modal Title 3</h2>
         <div class="modal-body">
-          <p>The Minnesota Timberwolves are trending because they acquired star center Rudy Gobert from the Utah Jazz in a blockbuster trade, bolstering their roster and making them a contender in the Western Conference.</p>
+          <p>{generate_paragraph(trend[2])}</p>
         </div>
       </div>
     </div>
@@ -101,7 +106,7 @@
         <span class="close">&times;</span>
         <h2 id="modal-title4">Modal Title 4</h2>
         <div class="modal-body">
-          <p>The Cleveland Cavaliers are trending right now because they recently traded for All-Star guard Donovan Mitchell, making them a contender in the Eastern Conference. The trade has generated a lot of excitement and speculation about the team's potential.</p>
+          <p>{generate_paragraph(trend[3])}</p>
         </div>
       </div>
     </div>
@@ -111,7 +116,7 @@
         <span class="close">&times;</span>
         <h2 id="modal-title5">Modal Title 5</h2>
         <div class="modal-body">
-          <p>Arsenal is trending because they beat Manchester United 3-2 in a thrilling Premier League match on Sunday, September 4th, 2022. This victory marked Arsenal's sixth consecutive win, solidifying their position at the top of the Premier League table.</p>
+          <p>{generate_paragraph(trend[4])}</p>
         </div>
       </div>
     </div>
@@ -122,7 +127,7 @@
         <span class="close">&times;</span>
         <h2 id="modal-title6">Modal Title 6</h2>
         <div class="modal-body">
-          <p>The Boston Bruins won their first Stanley Cup Final game in 38 years, defeating the St. Louis Blues 4-2. This historic victory has sparked widespread excitement and enthusiasm for the Bruins, leading to their trending status.</p>
+          <p>{generate_paragraph(trend[5])}</p>
         </div>
       </div>
     </div>
@@ -132,7 +137,7 @@
         <span class="close">&times;</span>
         <h2 id="modal-title7">Modal Title 7</h2>
         <div class="modal-body">
-          <p>Nashville SC and Inter Miami are trending due to their recent match in the MLS Cup Playoffs, with Nashville SC winning 3-0. This victory secures their place in the Eastern Conference Final, where they will face the Philadelphia Union.</p>
+          <p>{generate_paragraph(trend[6])}</p>
         </div>
       </div>
     </div>
@@ -143,7 +148,7 @@
         <span class="close">&times;</span>
         <h2 id="modal-title8">Modal Title 8</h2>
         <div class="modal-body">
-          <p>The Chicago Bulls are trending because they recently won their first game of the 2023 NBA season, ending their 11-game losing streak. This victory marks a significant moment for the team as they look to improve their performance and climb the standings.</p>
+          <p>{generate_paragraph(trend[7])}</p>
         </div>
       </div>
     </div>
@@ -153,7 +158,7 @@
         <span class="close">&times;</span>
         <h2 id="modal-title9">Modal Title 9</h2>
         <div class="modal-body">
-          <p>TikTok is trending due to the concerns raised by US officials about the app's potential national security risks, specifically related to data collection and censorship practices. These concerns have prompted calls for the app's ban or restrictions from certain platforms.</p>
+          <p>{generate_paragraph(trend[8])}</p>
         </div>
       </div>
     </div>
@@ -164,7 +169,7 @@
         <span class="close">&times;</span>
         <h2 id="modal-title10">Modal Title 10</h2>
         <div class="modal-body">
-          <p>Record Store Day 2024 is trending because it is an annual event that celebrates independent record stores and releases exclusive vinyl records. The 2024 event is set to take place on April 13, 2024.</p>
+          <p>{generate_paragraph(trend[9])}</p>
         </div>
       </div>
     </div>
@@ -175,3 +180,7 @@
   </body>
 </html>
 
+"""
+
+with open("index.html", "w") as file:
+    file.write(html_content)
