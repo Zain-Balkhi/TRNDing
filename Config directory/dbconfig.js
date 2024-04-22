@@ -49,4 +49,29 @@ app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
 
+// Route to handle user registration
+app.post('/register', async (req, res) => {
+  try {
+      const db = await connectToMongoDB();
+      const { username, password } = req.body;
+
+      // Check if the username already exists in the database
+      const existingUser = await db.collection('users').findOne({ username });
+
+      if (existingUser) {
+          res.status(400).send('Username already exists');
+          return;
+      }
+
+      // Insert the new user into the MongoDB collection
+      const result = await db.collection('users').insertOne({ username, password });
+      console.log('User registered successfully:', result.ops[0]);
+
+      res.status(201).send('User registered successfully');
+  } catch (error) {
+      console.error('Error registering user:', error);
+      res.status(500).send('Error registering user');
+  }
+});
+
 module.exports = { connectToMongoDB };

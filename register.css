@@ -1,0 +1,91 @@
+/* background - #fcfafa - white  */
+/* box outline - #79b791 - green  */
+/* highlight - #445E93 - blue  */
+/* font - #000009 - black  */
+/* font 2 - #0d0a0b - gray  */
+:root {
+    --background-color: #f2eaea;
+    --secondary-background: #abd2ba;
+    --highlight: #445E93;
+    --green: #d6d0d2;
+}
+
+body {
+    background-color: var(--background-color);
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background-color: #f2eaea;
+    color: black;
+    padding: 35px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header img {
+    width: 150px;
+}
+
+.login-button {
+    background-color: var(--highlight);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 40px;
+    top: auto;
+}
+
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#registrationForm {
+    width: 300px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+#registrationForm label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#registrationForm input[type="text"],
+#registrationForm input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#registrationForm button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #445E93;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#registrationForm button[type="submit"]:hover {
+    background-color: #0056b3;
+}

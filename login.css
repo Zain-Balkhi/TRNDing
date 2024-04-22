@@ -1,0 +1,213 @@
+/* background - #fcfafa - white  */
+/* box outline - #79b791 - green  */
+/* highlight - #445E93 - blue  */
+/* font - #000009 - black  */
+/* font 2 - #0d0a0b - gray  */
+:root {
+    --background-color: #f2eaea;
+    --secondary-background: #abd2ba;
+    --highlight: #445E93;
+    --green: #d6d0d2;
+}
+
+body {
+    background-color: var(--background-color);
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background-color: #f2eaea;
+    color: black;
+    padding: 35px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header img {
+    width: 150px;
+}
+
+.login-button, .register-button {
+    background-color: var(--highlight);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 40px;
+    top: auto;
+}
+
+.task-bar-container {
+    padding: 0px 10px;
+    background-color: var(--secondary-background);
+}
+
+.task-bar {
+    display: flex;
+    justify-content: space-around;
+}
+
+.task-bar div {
+    width: 100%;
+    text-align: center;
+    padding: 15px 50px 12px 50px;
+    border-bottom: 3px solid var(--secondary-background);
+}
+
+.task-bar div:hover {
+    border-bottom: 3px solid var(--highlight);
+}
+
+.grid-container {
+    padding: 0px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 5vw;
+    padding: 5vw;
+}
+
+.grid-item {
+    border-radius: 3vw;
+    background-color: var(--secondary-background);
+    padding: 20px;
+    text-align: center;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .grid-item .description {
+        display: none;
+    }
+}
+
+.grid-item .title {
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 90%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.grid-item:hover {
+    background-color: var(--green);
+}
+
+.grid-item .description {
+    max-width: 100%;
+    font-size: 1em;
+    margin-top: 5px;
+    color: black;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 40px;
+    border: 1px solid #888;
+    width: 60%;
+}
+
+.modal-title {
+    margin-top: 0;
+}
+
+.modal-body {
+    margin-top: 20px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#loginForm {
+    width: 300px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+#loginForm label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#loginForm button[type="submit"],
+.register-button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--highlight);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#loginForm button[type="submit"]:hover,
+.register-button:hover {
+    background-color: #0056b3;
+}
