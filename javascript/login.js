@@ -1,18 +1,40 @@
-// login.js
+document.addEventListener('DOMContentLoaded', function () {
+    const loginForm = document.getElementById('loginForm');
 
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting normally
+    loginForm.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the form from submitting normally
 
-    // Get the values entered by the user
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+        // Get the username and password from the form
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
 
-    // Here you can add your login logic:
-    // For demonstration purposes, let's just log the username and password to the console
-    console.log('Username:', username);
-    console.log('Password:', password);
+        // Create an object with the username and password
+        const data = {
+            username: username,
+            password: password
+        };
 
-    // After handling login, you can redirect the user to another page
-    // For example:
-    // window.location.href = 'dashboard.html'; // Redirect to dashboard page
+        // Send a POST request to the backend server
+        fetch('http://localhost:3000/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (response.ok) {
+                // If the response is OK (status code 200), display a success message
+                alert('Login successful');
+            } else {
+                // If the response is not OK, display an error message
+                alert('Login failed. Please check your username and password.');
+            }
+        })
+        .catch(error => {
+            // If there's an error, display an error message
+            console.error('Error logging in:', error);
+            alert('An error occurred. Please try again later.');
+        });
+    });
 });
