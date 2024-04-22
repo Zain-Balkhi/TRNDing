@@ -1,0 +1,230 @@
+
+/* background - #fcfafa - white  */
+/* box outline - #79b791 - green  */
+/* highlight - #445E93 - blue  */
+/* font - #000009 - black  */
+/* font 2 - #0d0a0b - gray  */
+:root {
+    --background-color: #f2eaea;
+    --secondary-background: #abd2ba;
+    --highlight: #445E93;
+    --green: #d6d0d2;
+
+  }
+body {
+    background-color: var(--background-color); /* cool white background */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.header {
+    background-color:#f2eaea; /* header background matches body */
+    color: black; /* changed text color for visibility */
+    padding: 35px 20px;
+    display: flex;
+    justify-content: center; /* centers the logo horizontally */
+    align-items: center;
+}
+.header img {
+    width: 150px; /* Adjust the size of your image accordingly */
+}
+.login-button {
+    background-color: var(--highlight);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    position: absolute; /* positions the login button to the right */
+    right: 40px;
+    top: auto;
+}
+.task-bar-container {
+    padding: 0px 10px;
+    background-color: var(--secondary-background); /* light grey background for task bar */
+}
+.task-bar {
+    display: flex;
+    justify-content: space-around;
+}
+.task-bar div {
+    width: 100%;
+    text-align: center;
+    padding: 15px 50px 12px 50px;
+    border-bottom: 3px solid var(--secondary-background);
+}
+.task-bar div:hover {
+    border-bottom: 3px solid var(--highlight);
+
+}
+.grid-container {
+    /* nothing yet */
+    padding: 0px;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Divide the grid into 5 equal columns */
+    grid-template-rows: repeat(2, auto); /* Adjust grid rows automatically based on content */
+    gap: 5vw; /* You can use vw units for better responsiveness */
+    padding: 5vw; /* Adjust padding as a percentage of viewport width */
+}
+
+/* Adjust the existing CSS for .grid-item */
+
+/* Add your existing CSS styles here */
+
+/* Style the grid items */
+.grid-item {
+    border-radius: 3vw; /* Adjust border-radius as a percentage of viewport width */
+    background-color: var(--secondary-background); /* light grey background for squares */
+    padding: 20px; /* Fixed padding */
+    text-align: center;
+    aspect-ratio: 1 / 1; /* makes the grid items squares */
+    overflow: hidden; /* Hide overflow content */
+    position: relative; /* Required for absolute positioning */
+}
+
+/* Hide description text on smaller screens */
+@media (max-width: 768px) {
+    .grid-item .description {
+        display: none;
+    }
+}
+
+
+/* Style the title and description text */
+.grid-item .title {
+    font-weight: bold;
+    position: absolute; /* Position title text */
+    top: 10px; /* Adjust top spacing as needed */
+    left: 50%; /* Align title text horizontally at the center */
+    transform: translateX(-50%); /* Center the title text horizontally */
+    max-width: 90%; /* Limit the maximum width of the title text to 90% of the button */
+    overflow: hidden; /* Hide overflow text */
+    white-space: nowrap; /* Prevent text wrapping */
+    text-align: center; /* Align text horizontally */
+}
+
+.grid-item:hover {
+    background-color: var(--green); /* Change background color on hover */
+}
+
+.grid-item .description {
+    max-width: 100%; /* Set maximum width */
+    font-size: 1em; /* Adjust font size as needed */
+    margin-top: 5px; /* Adjust spacing between title and description */
+    color: black; /* Adjust color of description text */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis (...) for overflow text */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    white-space: normal; /* Allow text to wrap onto multiple lines */
+}
+
+
+
+    
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top of everything */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  }
+  
+  /* Style the modal content */
+  /* Style the modal content */
+/* Style the modal content */
+.modal-content {
+    background-color: #fefefe; /* White background */
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 40px; /* Increase padding for more whitespace */
+    border: 1px solid #888;
+    width: 60%; /* Adjust the width as needed */
+  }
+  
+  /* Style the modal title */
+  .modal-title {
+    margin-top: 0; /* Remove top margin for the title */
+  }
+  
+  /* Style the modal body */
+  .modal-body {
+    margin-top: 20px; /* Add some top margin for the body */
+  }
+  
+  
+  /* Style the close button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* index.css */
+
+/* Center the login container */
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Style the form elements */
+#loginForm {
+    width: 300px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    display: inline-block; /* Added to prevent form from taking full width */
+}
+
+#loginForm label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#loginForm button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #445E93;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#loginForm button[type="submit"]:hover {
+    background-color: #0056b3;
+}
