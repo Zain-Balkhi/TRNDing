@@ -34,13 +34,19 @@ def generate_paragraph(trend):
     # Get user input for the prompt
     prompt = f"Why is {trend} trending right now? Give a short 2 sentence explanation."
 
-    GOOGLE_API_KEY= "AIzaSyCX_EyC2Rf9hzNQrkqdslC0skEMgB9dIPQ"
-    genai.configure(api_key=GOOGLE_API_KEY)
+    try:
+        GOOGLE_API_KEY= "AIzaSyCX_EyC2Rf9hzNQrkqdslC0skEMgB9dIPQ"
+        genai.configure(api_key=GOOGLE_API_KEY)
 
-    # Initialize the model
-    model = genai.GenerativeModel('gemini-pro')
+        # Initialize the model
+        model = genai.GenerativeModel('gemini-pro')
 
-    # Generate text content
-    response = model.generate_content(prompt)
+        # Generate text content
+        response = model.generate_content(prompt)
 
-    return response.text
+        return response.text
+    
+    except Exception as e:
+        # Catch any exceptions during API interaction
+        return "There was an error with connecting with Google's Gemini API"  # Return "error" on failure
+       
