@@ -26,6 +26,10 @@ document.addEventListener('DOMContentLoaded', function () {
             if (response.ok) {
                 // If the response is OK (status code 200), display a success message
                 alert('Login successful');
+
+                sessionStorage.setItem('loggedIn', 'true');
+            // Redirect to the main page
+                window.location.href = 'index.html';
             } else {
                 // If the response is not OK, display an error message
                 alert('Login failed. Please check your username and password.');
