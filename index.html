@@ -68,6 +68,25 @@
             </div>  
         </div>
     </main>
+    
+    <script>
+      // Check if the user is logged in
+      const loggedIn = sessionStorage.getItem('loggedIn');
+      const loginButton = document.getElementById('loginButton');
+      if (loggedIn === 'true') {
+          // User is logged in, change button text to "Sign Out"
+          loginButton.textContent = 'Sign Out';
+          loginButton.onclick = function() {
+              // Clear session indicating user is logged in
+              sessionStorage.removeItem('loggedIn');
+              // Redirect to the login page
+              window.location.href = 'index.html';
+          };
+      } else {
+          // User is not logged in, keep button text as "Login"
+          loginButton.textContent = 'Login';
+      }
+  </script>
 
     <div id="myModal1" class="modal">
       <div class="modal-content">
