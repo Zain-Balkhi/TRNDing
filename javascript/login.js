@@ -26,13 +26,15 @@ document.addEventListener('DOMContentLoaded', function () {
             if (response.ok) {
                 // If the response is OK (status code 200), display a success message
                 alert('Login successful');
-
                 sessionStorage.setItem('loggedIn', 'true');
-            // Redirect to the main page
+                // Redirect to the main page
                 window.location.href = 'index.html';
+            } else if (response.status === 401) {
+                // If the response status is 401 (Unauthorized), display an error message
+                alert('Login failed. Invalid username or password.');
             } else {
-                // If the response is not OK, display an error message
-                alert('Login failed. Please check your username and password.');
+                // Handle other error cases
+                alert('An error occurred. Please try again later.');
             }
         })
         .catch(error => {
