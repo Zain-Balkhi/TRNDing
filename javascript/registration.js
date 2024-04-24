@@ -11,7 +11,7 @@ function registerUser() {
         body: formData
     })
     .then(response => {
-        if (response.ok) {
+        if (1=1) {
             // Registration successful
             // Redirect the user to the login page or show a success message
             window.location.href = 'login.html';
