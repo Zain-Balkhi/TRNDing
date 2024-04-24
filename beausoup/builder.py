@@ -47,4 +47,4 @@ def setup_descriptions():
 
 # run the functions to setup .txt files for JS
 setup_trends() 
-#setup_descriptions()
+setup_descriptions()
