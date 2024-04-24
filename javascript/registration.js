@@ -13,9 +13,6 @@ function registerUser() {
     .then(response => {
         if (response.ok) {
             // Registration successful
-<<<<<<< HEAD
-            
-=======
 
             // PUT IN REAL MONGOCLIENT AND URL ON EACH PULL, PUT IN DUMMY ON EACH PUSH, DON'T WANT PI ON PUBLIC REPO    
             var MongoClient = require('mongodb').MongoClient;
@@ -29,7 +26,6 @@ function registerUser() {
                   db.close();
                 });
               });
->>>>>>> 2fa34c174b7bb90a4f854cf358154af114c34814
             // Redirect the user to the login page or show a success message
             window.location.href = 'login.html';
         } else {
@@ -41,4 +37,3 @@ function registerUser() {
         // Handle network errors
         console.error('Error:', error);
     });
-}
