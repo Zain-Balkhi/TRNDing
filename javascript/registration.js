@@ -1,27 +1,16 @@
-function registerUser() {
-    const newUsername = document.getElementById('newUsername').value;
-    const newPassword = document.getElementById('newPassword').value;
+function registerUser(event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
 
-    const formData = new FormData();
-    formData.append('newUsername', newUsername);
-    formData.append('newPassword', newPassword);
+    const newUsername = document.getElementById('newUsername').value.trim();
+    const newPassword = document.getElementById('newPassword').value.trim();
 
-    fetch('/register', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => {
-        if (1==1) {
-            // Registration successful
-            // Redirect the user to the login page or show a success message
-            window.location.href = 'login.html';
-        } else {
-            // Registration failed
-            // Handle errors (e.g., display error message to the user)
-        }
-    })
-    .catch(error => {
-        // Handle network errors
-        console.error('Error:', error);
-    });
+    // Check if both fields are filled
+    if (newUsername !== '' && newPassword !== '') {
+        // Redirect the user to the login page
+        window.location.href = 'login.html';
+    } else {
+        // Show error message for empty fields
+        alert('Please fill in both username and password fields.');
+    }
 }
